@@ -1,0 +1,26 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: pomodoro-service
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - pomodoro-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /backend
+    route:
+    - destination:
+        host: backend
+        port:
+          number: 4000
+  - match:
+    - uri:
+        prefix: /frontend
+    route:
+    - destination:
+        host: frontend
+        port:
+          number: 80
