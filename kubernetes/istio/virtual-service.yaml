@@ -4,13 +4,13 @@ metadata:
   name: pomodoro-service
 spec:
   hosts:
-  - "*"
+  - "localhost"
   gateways:
   - pomodoro-gateway
   http:
   - match:
     - uri:
-        prefix: /backend
+        prefix: /api
     route:
     - destination:
         host: backend
@@ -18,7 +18,7 @@ spec:
           number: 4000
   - match:
     - uri:
-        prefix: /frontend
+        prefix: /
     route:
     - destination:
         host: frontend

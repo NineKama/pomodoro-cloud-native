@@ -6,20 +6,20 @@ metadata:
     traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
   rules:
-  - host: localhost   # You can replace this with another domain if needed
+  - host: localhost  
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: frontend-service  # Frontend service name
+            name: frontend-service  
             port:
               number: 80
       - path: /api
         pathType: Prefix
         backend:
           service:
-            name: backend-service  # Backend service name
+            name: backend-service 
             port:
               number: 4000
