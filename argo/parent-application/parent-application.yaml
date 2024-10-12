@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/NineKama/pomodoro-cloud-native
     targetRevision: main
-    path: argo/app-of-apps
+    path: argo  
   destination:
     server: https://kubernetes.default.svc
     namespace: default
