@@ -17,11 +17,22 @@ spec:
       prune: true
       selfHeal: true
   hooks:
-    - name: trivy-scan
+    - name: trivy-scan-job
       type: PreSync
-      container:
-        image: aquasec/trivy:latest
-        command: ["/bin/sh", "-c"]
-        args:
-          - |
-            trivy image --severity HIGH,CRITICAL --exit-code 1 datdiep/pomodoro-backend:latest
+      manifest: |
+        apiVersion: batch/v1
+        kind: Job
+        metadata:
+          name: trivy-scan-job
+        spec:
+          backoffLimit: 0
+          template:
+            spec:
+              containers:
+              - name: trivy-scan
+                image: aquasec/trivy:latest
+                command: ["/bin/sh", "-c"]
+                args:
+                  - |
+                    trivy image --severity HIGH,CRITICAL --exit-code 1 datdiep/pomodoro-backend:latest
+              restartPolicy: Never
