@@ -4,7 +4,7 @@ metadata:
   name: pomodoro-service
 spec:
   hosts:
-  - "localhost"
+  - "*"
   gateways:
   - pomodoro-gateway
   http:
