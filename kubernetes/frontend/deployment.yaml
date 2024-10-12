@@ -16,7 +16,7 @@ spec:
         app: frontend
     spec:
       containers:
-      - image: datdiep/pomodoro-backend
+      - image: datdiep/pomodoro-frontend:latest
         name: frontend
         ports:
         - containerPort: 80

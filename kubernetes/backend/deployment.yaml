@@ -16,7 +16,7 @@ spec:
         app: backend
     spec:
       containers:
-      - image: datdiep/pomodoro-backend
+      - image: datdiep/pomodoro-backend:latest
         name: backend
         ports:
         - containerPort: 80
