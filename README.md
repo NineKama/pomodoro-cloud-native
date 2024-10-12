@@ -90,7 +90,7 @@ To deploy using Argo CD and the app-of-apps pattern:
 2. Apply the parent application manifest:
 
 ```bash
-kubectl apply -f argo/parent-application.yaml
+kubectl apply -f argo/parent-application/parent-application.yaml
 ```
 
 This will allow Argo CD to manage and deploy the backend, frontend, and other components as defined in the `argo` directory.
