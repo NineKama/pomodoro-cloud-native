@@ -16,3 +16,12 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  hooks:
+    - name: trivy-scan
+      type: PreSync
+      container:
+        image: aquasec/trivy:latest
+        command: ["/bin/sh", "-c"]
+        args:
+          - |
+            trivy image --severity HIGH,CRITICAL --exit-code 1 datdiep/pomodoro-backend:latest
