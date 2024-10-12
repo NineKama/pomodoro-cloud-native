@@ -13,7 +13,7 @@ spec:
         prefix: /api
     route:
     - destination:
-        host: backend
+        host: backend-service
         port:
           number: 4000
   - match:
@@ -21,6 +21,6 @@ spec:
         prefix: /
     route:
     - destination:
-        host: frontend
+        host: frontend-service
         port:
           number: 80
