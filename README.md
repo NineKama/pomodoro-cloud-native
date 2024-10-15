@@ -2,6 +2,14 @@
 
 This project is a **cloud-native**, **microservices-based** web application that utilizes **Kubernetes (K8s)** for orchestration. The application consists of a backend API and frontend UI, designed to be scalable and modular using microservices architecture. Each service (frontend and backend) is containerized using Docker, and the application is deployed on a Kubernetes cluster.
 
+# Build and Test Status
+
+| Service   | Build Status                                                                                                                                 | Coverage Status                                                                                                                                    |
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| Backend   | [![Backend - CI](https://github.com/NineKama/pomodoro-cloud-native/actions/workflows/ci-test.yaml/badge.svg)](https://github.com/NineKama/pomodoro-cloud-native/actions/workflows/ci-test.yaml)                                         | [![codecov](https://codecov.io/gh/NineKama/pomodoro-cloud-native/graph/badge.svg?token=HRHADVP83X)](https://codecov.io/gh/NineKama/pomodoro-cloud-native) |
+| Frontend  |                                   |  |
+
+
 ## Project Structure
 
 ```
