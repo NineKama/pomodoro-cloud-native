@@ -30,4 +30,11 @@ jobs:
         working-directory: ./backend
         env:
           NODE_ENV: test  
-        run: npm test
+        run: npm test -- --coverage
+        
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          file: ./backend/coverage/lcov.info
+          flags: unittests
+          name: Code Coverage Report

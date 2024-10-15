@@ -9,6 +9,6 @@
     "supertest": "^7.0.0"
   },
   "scripts": {
-    "test": "cross-env NODE_ENV=test jest --detectOpenHandles"
+    "test": "cross-env NODE_ENV=test jest --detectOpenHandles --coverage" 
   }
 }
