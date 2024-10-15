@@ -28,23 +28,9 @@ jobs:
     - name: Build backend Docker image
       run: docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/pomodoro-backend:latest ./backend
 
-    - name: Cache Trivy database
-      uses: actions/cache@v4
-      with:
-        path: ~/.cache/trivy
-        key: ${{ runner.os }}-trivy-db
-        restore-keys: |
-          ${{ runner.os }}-trivy-db
-
-    - name: Install Trivy
+    - name: Scan backend Docker image with Trivy
       run: |
-          sudo apt-get update && sudo apt-get install -y wget
-          wget https://github.com/aquasecurity/trivy/releases/download/v0.40.0/trivy_0.40.0_Linux-64bit.deb
-          sudo dpkg -i trivy_0.40.0_Linux-64bit.deb
-  
-    - name: Scan backend Docker image for vulnerabilities
-      run: |
-          trivy image --exit-code 1 --severity HIGH,CRITICAL ${{ secrets.DOCKER_HUB_USERNAME }}/pomodoro-backend:latest
+        docker run --rm aquasec/trivy:latest image --exit-code 1 --severity HIGH,CRITICAL ${{ secrets.DOCKER_HUB_USERNAME }}/pomodoro-backend:latest
 
     - name: Build and push backend Docker image
       if: success()
@@ -75,23 +61,9 @@ jobs:
     - name: Build frontend Docker image
       run: docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/pomodoro-frontend:latest ./frontend
 
-    - name: Cache Trivy database
-      uses: actions/cache@v4
-      with:
-        path: ~/.cache/trivy
-        key: ${{ runner.os }}-trivy-db
-        restore-keys: |
-          ${{ runner.os }}-trivy-db
-
-    - name: Install Trivy
+    - name: Scan frontend Docker image with Trivy
       run: |
-        sudo apt-get update && sudo apt-get install -y wget
-        wget https://github.com/aquasecurity/trivy/releases/download/v0.40.0/trivy_0.40.0_Linux-64bit.deb
-        sudo dpkg -i trivy_0.40.0_Linux-64bit.deb
-
-    - name: Scan frontend Docker image for vulnerabilities
-      run: |
-        trivy image --exit-code 1 --severity HIGH,CRITICAL ${{ secrets.DOCKER_HUB_USERNAME }}/pomodoro-frontend:latest
+        docker run --rm aquasec/trivy:latest image --exit-code 1 --severity HIGH,CRITICAL ${{ secrets.DOCKER_HUB_USERNAME }}/pomodoro-frontend:latest
 
     - name: Build and push frontend Docker image
       if: success() 
