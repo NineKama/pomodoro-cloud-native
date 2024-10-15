@@ -31,6 +31,15 @@ apiRouter.delete('/clear-timers', (req, res) => {
   res.json({ message: 'All timers cleared' });
 });
 
-app.listen(port, () => {
-  console.log(`Pomodoro backend running at http://localhost:${port}`);
+// Heath check route
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
 });
+
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(port, () => {
+    console.log(`Pomodoro backend running at http://localhost:${port}`);
+  });
+}
+
+module.exports = app;

@@ -2,5 +2,13 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "scripts": {
+    "test": "cross-env NODE_ENV=test jest --detectOpenHandles"
   }
 }
