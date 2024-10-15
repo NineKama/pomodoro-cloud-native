@@ -23,9 +23,11 @@ jobs:
           node-version: '22'
 
       - name: Install dependencies
+        working-directory: ./backend
         run: npm install
 
       - name: Run tests
+        working-directory: ./backend
         env:
           NODE_ENV: test  
         run: npm test
