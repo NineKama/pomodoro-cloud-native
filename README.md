@@ -7,7 +7,7 @@ This project is a **cloud-native**, **microservices-based** web application that
 | Service   | Build Status                                                                                                                                 | Coverage Status                                                                                                                                    |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | Backend   | [![Backend - CI](https://github.com/NineKama/pomodoro-cloud-native/actions/workflows/ci-test.yaml/badge.svg)](https://github.com/NineKama/pomodoro-cloud-native/actions/workflows/ci-test.yaml)                                         | [![codecov](https://codecov.io/gh/NineKama/pomodoro-cloud-native/graph/badge.svg?token=HRHADVP83X)](https://codecov.io/gh/NineKama/pomodoro-cloud-native) |
-| Frontend  |                                   |  |
+| Frontend  | WIP                                  | WIP |
 
 
 ## Project Structure
