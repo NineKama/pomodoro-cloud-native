@@ -28,6 +28,14 @@ jobs:
     - name: Build backend Docker image
       run: docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/pomodoro-backend:latest ./backend
 
+    - name: Cache Trivy database
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/trivy
+        key: ${{ runner.os }}-trivy-db
+        restore-keys: |
+          ${{ runner.os }}-trivy-db
+
     - name: Install Trivy
       run: |
           sudo apt-get update && sudo apt-get install -y wget
@@ -66,7 +74,15 @@ jobs:
 
     - name: Build frontend Docker image
       run: docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/pomodoro-frontend:latest ./frontend
-      
+
+    - name: Cache Trivy database
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/trivy
+        key: ${{ runner.os }}-trivy-db
+        restore-keys: |
+          ${{ runner.os }}-trivy-db
+
     - name: Install Trivy
       run: |
         sudo apt-get update && sudo apt-get install -y wget
