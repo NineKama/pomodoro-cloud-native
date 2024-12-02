@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: argo
+  description: Argo CD configuration for GitOps workflows
+  annotations:
+    github.com/project-slug: NineKama/pomodoro-cloud-native
+spec:
+  type: configuration
+  owner: team-ops
+  lifecycle: production

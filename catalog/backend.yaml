@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backend
+  description: Backend service for Pomodoro Cloud-Native project
+  annotations:
+    github.com/project-slug: NineKama/pomodoro-cloud-native
+spec:
+  type: service
+  owner: team-backend
+  lifecycle: production
