@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: pomodoro-cloud-native
+  description: Root catalog file for Pomodoro Cloud-Native project
+spec:
+  type: url
+  targets:
+    - https://raw.githubusercontent.com/NineKama/pomodoro-cloud-native/main/catalog/backend.yaml
+    - https://raw.githubusercontent.com/NineKama/pomodoro-cloud-native/main/catalog/frontend.yaml
+    - https://raw.githubusercontent.com/NineKama/pomodoro-cloud-native/main/catalog/argo.yaml
+    - https://raw.githubusercontent.com/NineKama/pomodoro-cloud-native/main/catalog/kubernetes.yaml
