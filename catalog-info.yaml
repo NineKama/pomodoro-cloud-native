@@ -6,7 +6,7 @@ metadata:
 spec:
   type: url
   targets:
-    - https://raw.githubusercontent.com/NineKama/pomodoro-cloud-native/main/catalog/backend.yaml
-    - https://raw.githubusercontent.com/NineKama/pomodoro-cloud-native/main/catalog/frontend.yaml
-    - https://raw.githubusercontent.com/NineKama/pomodoro-cloud-native/main/catalog/argo.yaml
-    - https://raw.githubusercontent.com/NineKama/pomodoro-cloud-native/main/catalog/kubernetes.yaml
+    - https://github.com/NineKama/pomodoro-cloud-native/blob/main/catalog/backend.yaml
+    - https://github.com/NineKama/pomodoro-cloud-native/blob/main/catalog/frontend.yaml
+    - https://github.com/NineKama/pomodoro-cloud-native/blob/main/catalog/argo.yaml
+    - https://github.com/NineKama/pomodoro-cloud-native/blob/main/catalog/kubernetes.yaml
